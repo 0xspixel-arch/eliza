@@ -92,6 +92,15 @@
     "utf-8-validate"
   ],
   "dependencies": {
+    "@elizaos-plugins/plugin-web-search": "github:elizaos-plugins/plugin-web-search",
+    "@elizaos/plugin-autonomous": "github:elizaos-plugins/plugin-autonomous",
+    "@elizaos/plugin-elizacloud": "github:elizaos-plugins/plugin-elizacloud",
+    "@elizaos/plugin-knowledge": "github:elizaos-plugins/plugin-knowledge",
+    "@elizaos/plugin-memory": "github:elizaos-plugins/plugin-memory",
+    "@elizaos/plugin-openai": "github:elizaos-plugins/plugin-openai",
+    "@elizaos/plugin-openrouter": "github:elizaos-plugins/plugin-openrouter",
+    "@elizaos/plugin-solana": "github:0xspixel-arch/plugin-solana#1.x",
+    "@elizaos/plugin-trust": "github:elizaos-plugins/plugin-trust",
     "helmet": "^8.1.0",
     "js-yaml": "^4.1.1",
     "zod": "4.1.13"

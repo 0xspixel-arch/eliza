@@ -15,6 +15,7 @@ import { audioRouter } from './audio';
 import { runtimeRouter } from './runtime';
 import { teeRouter } from './tee';
 import { systemRouter } from './system';
+import { openaiRouter } from './openai';
 import { SocketIORouter } from '../socketio';
 import {
   securityMiddleware,
@@ -181,7 +182,7 @@ export function createPluginRouteHandler(elizaOS: ElizaOS): express.RequestHandl
               if (!res.headersSent) {
                 const status =
                   (error instanceof Error && 'code' in error && error.code === 'ENOENT') ||
-                  (error instanceof Error && error.message?.includes('not found'))
+                    (error instanceof Error && error.message?.includes('not found'))
                     ? 404
                     : 500;
                 res.status(status).json({
@@ -252,7 +253,7 @@ export function createPluginRouteHandler(elizaOS: ElizaOS): express.RequestHandl
               if (!res.headersSent) {
                 const status =
                   (error instanceof Error && 'code' in error && error.code === 'ENOENT') ||
-                  (error instanceof Error && error.message?.includes('not found'))
+                    (error instanceof Error && error.message?.includes('not found'))
                     ? 404
                     : 500;
                 res.status(status).json({
@@ -416,6 +417,9 @@ export function createApiRouter(
 
   // Mount system router at /system - handles system configuration, health checks, and environment
   router.use('/system', systemRouter());
+
+  // Mount OpenAI router at /openai - handles ephemeral tokens for Realtime API
+  router.use('/openai', openaiRouter());
 
   // NOTE: Legacy route aliases removed to prevent duplicates
   // Use proper domain routes: /messaging, /system, /tee

@@ -1,0 +1,57 @@
+{
+    "name": "@elizaos/project-custom",
+    "description": "Custom ElizaOS project with integrated plugins (Solana, Trust, Web Search, Knowledge, Memory, Autonomous, ElizaCloud)",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "dist/src/index.js",
+    "module": "dist/src/index.js",
+    "types": "dist/src/index.d.ts",
+    "keywords": [
+        "elizaos",
+        "project",
+        "custom",
+        "solana",
+        "blockchain",
+        "plugins"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": {
+                "types": "./dist/src/index.d.ts",
+                "default": "./dist/src/index.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@elizaos/cli": "workspace:*",
+        "@elizaos/core": "workspace:*",
+        "@elizaos/plugin-bootstrap": "workspace:*",
+        "@elizaos/plugin-sql": "workspace:*",
+        "@elizaos/server": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.1",
+        "prettier": "^3.7.4",
+        "typescript": "^5.9.3"
+    },
+    "scripts": {
+        "start": "elizaos start",
+        "dev": "elizaos dev",
+        "build": "bun run build.ts",
+        "lint": "prettier --write ./src",
+        "type-check": "tsc --noEmit",
+        "format": "prettier --write ./src",
+        "format:check": "prettier --check ./src"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
