@@ -23,7 +23,7 @@ function log(prefix, message) {
 const cyan = (s) => `\x1b[36m${s}\x1b[0m`;
 
 // Health check function to verify server is responding
-async function waitForServer(url = 'http://localhost:3000/api/server/ping', maxAttempts = 30) {
+async function waitForServer(url = 'http://localhost:3000/health', maxAttempts = 30) {
   log('HEALTH', `Waiting for server to be ready at ${url}...`);
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {

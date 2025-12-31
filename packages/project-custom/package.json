@@ -34,7 +34,10 @@
         "@elizaos/cli": "workspace:*",
         "@elizaos/core": "workspace:*",
         "@elizaos/plugin-bootstrap": "workspace:*",
+        "@elizaos/plugin-knowledge": "^1.6.1",
+        "@elizaos/plugin-memory": "^1.1.2",
         "@elizaos/plugin-sql": "workspace:*",
+        "@elizaos/plugin-trust": "^1.2.1",
         "@elizaos/server": "workspace:*"
     },
     "devDependencies": {
